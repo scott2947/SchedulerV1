@@ -14,101 +14,25 @@ def WelcomeMessage():
     
     print(colorama.Fore.YELLOW + colorama.Style.NORMAL + inspirationQuote + "\n")
 
-    print(colorama.Fore.CYAN + "Welcome to Python Project Scheduler" + "\n")
+    print(colorama.Fore.WHITE + "Welcome to Python Project Scheduler" + "\n")
 
     repeatedString = "█" * len(inspirationQuote)
 
     print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
 
 def RootMenu():
-    options = ["Return to previous state", "Manage preset lists", "Use Scheduler", "Exit"]
+    print("Please select an option\n")
 
-    print(colorama.Fore.RED + "Select an option from the root menu below:" + "\n")
+    print(colorama.Fore.GREEN + "1) " + colorama.Fore.WHITE + "Return to previous state")
 
-    for i in range(len(options)):
-        print(colorama.Fore.GREEN + str(i + 1) + " " + colorama.Fore.CYAN + options[i])
+    print(colorama.Fore.GREEN + "2) " + colorama.Fore.WHITE + "Manage preset lists")
 
-    print()
+    print(colorama.Fore.GREEN + "3) " + colorama.Fore.WHITE + "Use Scheduler")
 
-    choice = int(input(colorama.Fore.RED + "Enter your choice >> " + colorama.Style.RESET_ALL))
+    print(colorama.Fore.GREEN + "4) " + colorama.Fore.GREEN + "Exit Code")
 
-    if choice == 1:
-        ReturnToPreviousState()
+    choice = int(input(colorama.Fore.GREEN + colorama.Style.DIM + "Your choice => "))
 
-    elif choice == 2:
-        ManagePresetLists()
+    print() # Break bar
 
-    elif choice == 3:
-        UseScheduler()
-
-    elif choice == 4:
-        Exit()
-
-def ReturnToPreviousState():
-    pass
-
-def ManagePresetLists():
-    pass
-
-def ViewPresetLists():
-    pass
-
-def AddPresetList():
-    pass
-
-def EditPresetList():
-    pass
-
-def AddTasks():
-    pass
-
-def EditTasks():
-    pass
-
-def ReorderTasks():
-    pass
-
-def DeleteTasks():
-    pass
-
-def ReorderPresetLists():
-    pass
-
-def DeletePresetList():
-    pass
-
-def RerunScheduler():
-    pass
-
-def UseScheduler():
-    pass
-
-def InputTasks():
-    pass
-
-def PreloadTasks():
-    pass
-
-def SelectPresetList():
-    pass
-
-def SelectPresetTasks():
-    pass
-
-def InputStartTime():
-    pass
-
-def InputProhibitedWindows():
-    pass
-
-def CalculateTaskList():
-    pass
-
-def OutputTaskList():
-    pass
-
-def MarkCompletedTask():
-    pass
-
-def Exit():
-    pass
+RootMenu()
