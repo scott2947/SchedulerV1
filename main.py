@@ -25,79 +25,81 @@ def WelcomeMessage():
     return len(inspirationQuote)
 
 def RootMenu(blockLength):
-    print("Please select an option\n")
+    carryOn = True
 
-    print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "Return to previous state")
+    while carryOn:
+        print("Please select an option\n")
 
-    print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Manage preset lists")
+        print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "Return to previous state")
 
-    print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Use Scheduler")
+        print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Manage preset lists")
 
-    print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Exit Code")
+        print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Use Scheduler")
 
-    choice = int(input(colorama.Fore.CYAN + "Your choice => "))
+        print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Exit Code")
 
-    repeatedString = "█" * blockLength
+        choice = int(input(colorama.Fore.CYAN + "Your choice => "))
 
-    print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
+        repeatedString = "█" * blockLength
 
-    input()
+        print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
 
-    if choice == 1:
-        pass
+        if choice == 1:
+            pass
 
-    elif choice == 2:
-        ManagePresetLists(blockLength)
+        elif choice == 2:
+            ManagePresetLists(blockLength)
 
-    elif choice == 3:
-        pass
+        elif choice == 3:
+            pass
 
-    elif choice == 4:
-        pass
+        elif choice == 4:
+            carryOn = False
 
 def ReturnToPreviousState(blockLength):
     pass # Will be written when necessary infrastructure is implemented
 
 def ManagePresetLists(blockLength):
-    print("Please select an option\n")
+    carryOn = True
 
-    print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "View all preset lists")
+    while carryOn:
+        print("Please select an option\n")
 
-    print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Add preset lists")
+        print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "View all preset lists")
 
-    print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Edit preset lists")
+        print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Add preset lists")
 
-    print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Reorder preset lists")
+        print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Edit preset lists")
 
-    print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Delete preset list")
+        print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Reorder preset lists")
 
-    print(colorama.Fore.CYAN + "6) " + colorama.Fore.WHITE + "Exit to root menu")
+        print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Delete preset list")
 
-    choice = int(input(colorama.Fore.CYAN + "Your choice => "))
+        print(colorama.Fore.CYAN + "6) " + colorama.Fore.WHITE + "Exit to root menu")
 
-    repeatedString = "█" * blockLength
+        choice = int(input(colorama.Fore.CYAN + "Your choice => "))
 
-    print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
+        repeatedString = "█" * blockLength
 
-    input()
+        print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
 
-    if choice == 1:
-        ViewPresetLists(blockLength)
+        if choice == 1:
+            ViewPresetLists(blockLength)
 
-    elif choice == 2:
-        AddPresetList(blockLength)
+        elif choice == 2:
+            AddPresetList(blockLength)
 
-    elif choice == 3:
-        pass
+        elif choice == 3:
+            pass
 
-    elif choice == 4:
-        pass
+        elif choice == 4:
+            pass
 
-    elif choice == 5:
-        pass
+        elif choice == 5:
+            pass
 
-    elif choice == 6:
-        pass
+        elif choice == 6:
+            carryOn = False
 
 def ViewPresetLists(blockLength):
     lists = []
@@ -130,9 +132,7 @@ def ViewPresetLists(blockLength):
 
     repeatedString = "█" * blockLength
 
-    print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
-
-    input()
+    print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
 
 def AddPresetList(blockLength):
     fileName = input(colorama.Fore.CYAN + "Please enter the name of the list => ")
@@ -192,14 +192,13 @@ def AddPresetList(blockLength):
 
     repeatedString = "█" * blockLength
 
-    print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
-
-    input()
+    print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
 
 def AddTask():
     task = input(colorama.Fore.CYAN + "Please enter the task => ")
+    duration = input(colorama.Fore.CYAN + "Please enter the duration of the task (in minutes) => ")
     "" + colorama.Style.RESET_ALL
-    return task
+    return task + " ({0})".format(duration)
 
 blockLength = WelcomeMessage()
 RootMenu(blockLength)
