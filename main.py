@@ -1,7 +1,7 @@
 import colorama, random
 
 def WelcomeMessage():
-    print(colorama.Fore.WHITE + colorama.Style.DIM + "Created in 2023 by " + colorama.Fore.GREEN + "Callum Scott")
+    print(colorama.Fore.WHITE + colorama.Style.DIM + "Created in 2023 by " + colorama.Fore.CYAN + "Callum Scott")
     print(colorama.Fore.WHITE + "For the benefit of all who show a desire to learn" + "\n")
 
     inspirationQuotes = []
@@ -18,21 +18,129 @@ def WelcomeMessage():
 
     repeatedString = "█" * len(inspirationQuote)
 
-    print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
+    print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
 
-def RootMenu():
+    input()
+
+    return len(inspirationQuote)
+
+def RootMenu(blockLength):
     print("Please select an option\n")
 
-    print(colorama.Fore.GREEN + "1) " + colorama.Fore.WHITE + "Return to previous state")
+    print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "Return to previous state")
 
-    print(colorama.Fore.GREEN + "2) " + colorama.Fore.WHITE + "Manage preset lists")
+    print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Manage preset lists")
 
-    print(colorama.Fore.GREEN + "3) " + colorama.Fore.WHITE + "Use Scheduler")
+    print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Use Scheduler")
 
-    print(colorama.Fore.GREEN + "4) " + colorama.Fore.GREEN + "Exit Code")
+    print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Exit Code")
 
-    choice = int(input(colorama.Fore.GREEN + colorama.Style.DIM + "Your choice => "))
+    choice = int(input(colorama.Fore.CYAN + "Your choice => "))
 
-    print() # Break bar
+    repeatedString = "█" * blockLength
 
-RootMenu()
+    print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
+
+    input()
+
+    if choice == 1:
+        pass
+
+    elif choice == 2:
+        ManagePresetLists(blockLength)
+
+    elif choice == 3:
+        pass
+
+    elif choice == 4:
+        pass
+
+def ReturnToPreviousState(blockLength):
+    pass # Will be written when necessary infrastructure is implemented
+
+def ManagePresetLists(blockLength):
+    print("Please select an option\n")
+
+    print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "View all preset lists")
+
+    print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Add preset lists")
+
+    print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Edit preset lists")
+
+    print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Reorder preset lists")
+
+    print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Delete preset list")
+
+    print(colorama.Fore.CYAN + "6) " + colorama.Fore.WHITE + "Exit to root menu")
+
+    choice = int(input(colorama.Fore.CYAN + "Your choice => "))
+
+    repeatedString = "█" * blockLength
+
+    print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
+
+    input()
+
+    if choice == 1:
+        ViewPresetLists(blockLength)
+
+    elif choice == 2:
+        pass
+
+    elif choice == 3:
+        pass
+
+    elif choice == 4:
+        pass
+
+    elif choice == 5:
+        pass
+
+    elif choice == 6:
+        RootMenu(blockLength)
+
+def ViewPresetLists(blockLength):
+    lists = []
+    with open("./PresetLists/lists.txt") as fileObj:
+        fileDump = fileObj.readlines()
+        fileDump = [line.replace("\n", "") for line in fileDump]
+        for line in fileDump:
+            lists.append(line)
+
+    print("Please select an option\n")
+
+    for i in range(len(lists)):
+        print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + lists[i])
+    
+    choice = int(input(colorama.Fore.CYAN + "Your choice => "))
+
+    fileName = "./PresetLists/Lists/" + lists[choice - 1] + ".txt"
+
+    tasks = []
+    with open(fileName) as fileObj:
+        fileDump = fileObj.readlines()
+        fileDump = [line.replace("\n", "") for line in fileDump]
+        for line in fileDump:
+            tasks.append(line)
+    
+    print()
+    for task in tasks:
+        print(colorama.Style.RESET_ALL + task)
+    print()
+
+    repeatedString = "█" * blockLength
+
+    print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL)
+
+    input()
+
+    ManagePresetLists(blockLength)
+
+def AddPresetList(blockLength):
+    fileName = input(colorama.Fore.CYAN + "Please enter the name of the list => ")
+
+    file = open("./PresetLists/Lists/" + fileName + ".txt", "w")
+    file.close()
+
+blockLength = WelcomeMessage()
+RootMenu(blockLength)
