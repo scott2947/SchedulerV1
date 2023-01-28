@@ -173,32 +173,86 @@ def AddPresetList(blockLength):
 
         if choice == 1:
             print()
-            task = AddTask()
+            fileDump = AddTask(fileDump)
             print()
-            with open("./PresetLists/Lists/" + fileName + ".txt", "a") as fileObj:
-                fileObj.write(task + "\n")
 
         elif choice == 2:
-            pass
+            print()
+            fileDump = EditTask(fileDump)
+            print()
 
         elif choice == 3:
-            pass
+            print()
+            fileDump = ReorderTasks(fileDump)
+            print()
 
         elif choice == 4:
-            pass
+            print()
+            fileDump = DeleteTask(fileDump)
+            print()
 
         elif choice == 5:
             carryOn = False
+
+        with open("./PresetLists/Lists/" + fileName + ".txt", "w") as fileObj:
+            for line in fileDump:
+                fileObj.write(line + "\n")
 
     repeatedString = "█" * blockLength
 
     print("\n" + colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
 
-def AddTask():
+def AddTask(taskList):
     task = input(colorama.Fore.CYAN + "Please enter the task => ")
     duration = input(colorama.Fore.CYAN + "Please enter the duration of the task (in minutes) => ")
     "" + colorama.Style.RESET_ALL
-    return task + " ({0})".format(duration)
+    taskList.append(task + " ({0})".format(duration))
+    return taskList
+
+def EditTask(taskList):
+    for i in range(len(taskList)):
+        print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + taskList[i])
+
+    print()
+
+    choice = int(input(colorama.Fore.CYAN + "Please select the task you want to edit => "))
+
+    print()
+    
+    task = input(colorama.Fore.CYAN + "Please enter the edited task => ")
+    duration = input(colorama.Fore.CYAN + "Please enter the duration of the edited task (in minutes) => ")
+    "" + colorama.Style.RESET_ALL
+
+    taskList[choice - 1] = task + " ({0})".format(duration)
+
+    return taskList
+
+def ReorderTasks(taskList):
+    for i in range(len(taskList)):
+        print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + taskList[i])
+    
+    print()
+
+    choice = input(colorama.Fore.CYAN + "Please provide a string with the tasks in the desired order => ")
+
+    returnList = []
+
+    for i in choice:
+        returnList.append(taskList[int(i) - 1])
+
+    return returnList
+
+def DeleteTask(taskList):
+    for i in range(len(taskList)):
+        print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + taskList[i])
+
+    print()
+
+    choice = int(input(colorama.Fore.CYAN + "Please select the task you want to delete => "))
+
+    taskList.pop(choice - 1)
+
+    return taskList
 
 blockLength = WelcomeMessage()
 RootMenu(blockLength)
