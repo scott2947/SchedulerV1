@@ -41,7 +41,7 @@ def PresetListInteractor(filePath, blockLength):
 
         print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Delete task")
 
-        print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Exit to manage preset tasks")
+        print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Exit to manage preset lists")
 
         choice = int(input(colorama.Fore.CYAN + "Your choice => "))
 
@@ -49,7 +49,7 @@ def PresetListInteractor(filePath, blockLength):
 
         if choice == 1:
             print()
-            tasks = AddTask(tasks)
+            tasks = AddTask(tasks) # Not strictly necessary, due to by reference nature of lists
             print()
 
         elif choice == 2:

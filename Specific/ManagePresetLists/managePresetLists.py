@@ -12,6 +12,12 @@ from addPresetList import AddPresetList
 sys.path.insert(0, "./Specific/EditPresetList")
 from editPresetList import EditPresetList
 
+sys.path.insert(0, "./Specific/ReorderPresetLists")
+from reorderPresetLists import ReorderPresetLists
+
+sys.path.insert(0, "./Specific/DeletePresetList")
+from deletePresetList import DeletePresetList
+
 def ManagePresetLists(blockLength):
     carryOn = True
 
@@ -48,10 +54,10 @@ def ManagePresetLists(blockLength):
             EditPresetList(blockLength)
 
         elif choice == 4:
-            pass
+            ReorderPresetLists(blockLength)
 
         elif choice == 5:
-            pass
+            DeletePresetList(blockLength)
 
         elif choice == 6:
             carryOn = False

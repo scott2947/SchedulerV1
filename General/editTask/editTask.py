@@ -4,8 +4,6 @@ def EditTask(taskList):
     for i in range(len(taskList)):
         print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + taskList[i])
 
-    print()
-
     choice = int(input(colorama.Fore.CYAN + "Please select the task you want to edit => "))
 
     print()
