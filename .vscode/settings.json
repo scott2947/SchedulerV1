@@ -1,0 +1,19 @@
+{
+    "python.analysis.extraPaths": [
+        "./General/ConvertFileList",
+        "./General/PrintBlock",
+        "./General/ConvertListFile",
+        "./General/PresetListInteractor",
+        "./Specific/ReturnToPreviousState",
+        "./Specific/ManagePresetLists",
+        "./Specific/EditPresetList",
+        "./Specific/AddPresetList",
+        "./Specific/ViewPresetLists",
+        "./General/AddTask",
+        "./General/EditTask",
+        "./General/ReorderTasks",
+        "./General/DeleteTask",
+        "./Specific/WelcomeMessage",
+        "./Specific/RootMenu"
+    ]
+}
