@@ -254,5 +254,76 @@ def DeleteTask(taskList):
 
     return taskList
 
+def EditPresetList(blockLength):
+    lists = []
+    with open("./PresetLists/lists.txt") as fileObj:
+        fileDump = fileObj.readlines()
+        fileDump = [line.replace("\n", "") for line in fileDump]
+        for line in fileDump:
+            lists.append(line)
+
+    print("Please select a preset list to edit\n")
+
+    for i in range(len(lists)):
+        print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + lists[i])
+    
+    choice = int(input(colorama.Fore.CYAN + "Your choice => "))
+
+    fileName = "./PresetLists/Lists/" + lists[choice - 1] + ".txt"
+
+    carryOn = True
+    while carryOn:
+        repeatedString = "█" * blockLength
+        print(colorama.Fore.WHITE + colorama.Style.DIM + repeatedString + colorama.Style.RESET_ALL + "\n")
+
+        with open(fileName) as fileObj:
+            fileDump = fileObj.readlines()
+            fileDump = [line.replace("\n", "") for line in fileDump]
+            for line in fileDump:
+                print(colorama.Fore.WHITE + line)
+        
+        print("\n" + colorama.Fore.CYAN + "Please select an option\n")
+
+        print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "Add task")
+
+        print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Edit task")
+
+        print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Reorder tasks")
+
+        print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Delete task")
+
+        print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Exit to manage preset tasks")
+
+        choice = int(input(colorama.Fore.CYAN + "Your choice => "))
+
+        "" + colorama.Style.RESET_ALL
+
+        if choice == 1:
+            print()
+            fileDump = AddTask(fileDump)
+            print()
+
+        elif choice == 2:
+            print()
+            fileDump = EditTask(fileDump)
+            print()
+
+        elif choice == 3:
+            print()
+            fileDump = ReorderTasks(fileDump)
+            print()
+
+        elif choice == 4:
+            print()
+            fileDump = DeleteTask(fileDump)
+            print()
+
+        elif choice == 5:
+            carryOn = False
+
+        with open(fileName, "w") as fileObj:
+            for line in fileDump:
+                fileObj.write(line + "\n")
+    
 blockLength = WelcomeMessage()
 RootMenu(blockLength)
