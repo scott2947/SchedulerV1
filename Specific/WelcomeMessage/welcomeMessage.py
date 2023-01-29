@@ -10,7 +10,7 @@ def WelcomeMessage():
     print(colorama.Fore.WHITE + colorama.Style.DIM + "Created in 2023 by " + colorama.Fore.CYAN + "Callum Scott")
     print(colorama.Fore.WHITE + "For the benefit of all who show a desire to learn" + "\n")
 
-    inspirationQuotes = ConvertFileList("./Specific/WelcomeMessage/quotes.txt")
+    inspirationQuotes = ConvertFileList("./Data/Quotes/quotes.txt")
     inspirationQuote = random.choice(inspirationQuotes)
     
     print(colorama.Fore.YELLOW + colorama.Style.NORMAL + inspirationQuote + "\n")

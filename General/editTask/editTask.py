@@ -15,3 +15,6 @@ def EditTask(taskList):
     taskList[choice - 1] = task + " ({0})".format(duration)
 
     return taskList
+
+if __name__ == '__main__':
+    EditTask()

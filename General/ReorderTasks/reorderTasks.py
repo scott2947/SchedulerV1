@@ -14,3 +14,6 @@ def ReorderTasks(taskList):
     ""+colorama.Style.RESET_ALL
 
     return returnList
+
+if __name__ == '__main__':
+    ReorderTasks()

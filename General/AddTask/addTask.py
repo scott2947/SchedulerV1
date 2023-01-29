@@ -6,3 +6,6 @@ def AddTask(taskList):
     "" + colorama.Style.RESET_ALL
     taskList.append(task + " ({0})".format(duration))
     return taskList
+
+if __name__ == '__main__':
+    AddTask()

@@ -3,3 +3,6 @@ def ConvertFileList(filePath):
         fileDump = fileObj.readlines()
         fileDump = [line.replace("\n", "") for line in fileDump]
         return fileDump
+    
+if __name__ == '__main__':
+    ConvertFileList()

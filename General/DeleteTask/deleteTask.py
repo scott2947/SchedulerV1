@@ -11,3 +11,6 @@ def DeleteTask(taskList):
     ""+colorama.Style.RESET_ALL
 
     return taskList
+
+if __name__ == '__main__':
+    DeleteTask()
