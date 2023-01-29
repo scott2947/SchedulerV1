@@ -26,9 +26,9 @@ def ManagePresetLists(blockLength):
 
         print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "View all preset lists")
 
-        print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Add preset lists")
+        print(colorama.Fore.CYAN + "2) " + colorama.Fore.WHITE + "Add preset list")
 
-        print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Edit preset lists")
+        print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Edit preset list")
 
         print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Reorder preset lists")
 

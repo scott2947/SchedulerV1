@@ -31,7 +31,7 @@ def PresetListInteractor(filePath, blockLength):
         for line in tasks:
             print(colorama.Fore.WHITE + line)
         
-        print("\n" + colorama.Fore.CYAN + "Please select an option\n")
+        print("\n" + colorama.Fore.WHITE + "Please select an option\n")
 
         print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "Add task")
 
