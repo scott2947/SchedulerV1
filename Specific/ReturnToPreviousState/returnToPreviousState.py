@@ -1,4 +1,4 @@
-def ReturnToPreviousState(blockLength):
+def ReturnToPreviousState():
     pass # Will be written when necessary infrastructure is implemented
 
 if __name__ == "__main__":

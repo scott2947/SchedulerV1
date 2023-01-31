@@ -9,7 +9,7 @@ from printBlock import PrintBlock
 def ViewPresetLists(blockLength):
     lists = ConvertFileList("./Data/PresetLists/listNames.txt")
 
-    print("Please select an option\n")
+    print("Please select a preset list to view\n")
 
     for i in range(len(lists)):
         print(colorama.Fore.CYAN + str(i + 1) + ") " + colorama.Fore.WHITE + lists[i])
