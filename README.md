@@ -5,9 +5,6 @@ A simple, text-based time management application written in Python.
 <li>Tasks must be internal to a day, due to time as opposed to date and time being used to track tasks</li>
 <li>Task names must be unique (they are identifiers)</li>
 </ul>
-<h3>Buglist</h3>
-<ul>
-<li> Tasks not colouring properly when split across a break</li>
 <h3>Ruleset:</h3>
 <ul>
 <li>Always block at the end of major functions</li>

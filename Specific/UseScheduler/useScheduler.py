@@ -66,6 +66,8 @@ def UseScheduler(blockLength):
             carryOn = False
     
     ""+colorama.Style.RESET_ALL
+    
+    print()
 
 if __name__ == "__main__":
     UseScheduler(30) # This is just for testing purposes

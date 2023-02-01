@@ -13,7 +13,7 @@ def RootMenu(blockLength):
     carryOn = True
 
     while carryOn:
-        print("Please select an option\n")
+        print(colorama.Fore.WHITE + "Please select an option\n")
 
         print(colorama.Fore.CYAN + "1) " + colorama.Fore.WHITE + "Manage preset lists")
 
