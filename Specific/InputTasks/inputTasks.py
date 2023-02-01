@@ -9,16 +9,35 @@ from convertListFile import ConvertListFile
 sys.path.insert(0, "./General/PrintBlock")
 from printBlock import PrintBlock
 
+sys.path.insert(0, "./Specific/PreloadTasks")
+from preloadTasks import PreloadTasks
+
+sys.path.insert(0, "./Specific/LoadPresetList")
+from loadPresetList import LoadPresetList
+
+sys.path.insert(0, "./Specific/LoadPresetTasks")
+from loadPresetTasks import LoadPresetTasks
+
+sys.path.insert(0, "./General/AddTask")
+from addTask import AddTask
+
+sys.path.insert(0, "./General/EditTask")
+from editTask import EditTask
+
+sys.path.insert(0, "./General/ReorderTasks")
+from reorderTasks import ReorderTasks
+
+sys.path.insert(0, "./General/DeleteTask")
+from deleteTask import DeleteTask
+
 def InputTasks(blockLength):
-    file = open("./Data/ActiveList/activeList.txt", "w")
-    file.close()
+    tasks = []
 
     carryOn = True
     while carryOn:
         PrintBlock(blockLength)
         print()
 
-        tasks = ConvertFileList("./Data/ActiveList/activeList.txt")
         for line in tasks:
             print(colorama.Fore.WHITE + line)
 
@@ -30,46 +49,60 @@ def InputTasks(blockLength):
 
         print(colorama.Fore.CYAN + "3) " + colorama.Fore.WHITE + "Select tasks from a preset list")
 
-        print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Input new tasks")
+        print(colorama.Fore.CYAN + "4) " + colorama.Fore.WHITE + "Add task")
 
-        print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Reorder tasks")
+        print(colorama.Fore.CYAN + "5) " + colorama.Fore.WHITE + "Edit task")
 
-        print(colorama.Fore.CYAN + "6) " + colorama.Fore.WHITE + "Delete task")
+        print(colorama.Fore.CYAN + "6) " + colorama.Fore.WHITE + "Reorder tasks")
 
-        print(colorama.Fore.CYAN + "7) " + colorama.Fore.WHITE + "Exit to next stage")
+        print(colorama.Fore.CYAN + "7) " + colorama.Fore.WHITE + "Delete task")
+
+        print(colorama.Fore.CYAN + "8) " + colorama.Fore.WHITE + "Exit to next stage")
 
         choice = int(input(colorama.Fore.CYAN + "Your choice => "))
 
         ""+colorama.Style.RESET_ALL
 
         if choice == 1:
-            pass
+            tasks = PreloadTasks()
+            print()
 
         elif choice == 2:
-            pass
+            print()
+            tasks = LoadPresetList()
+            print()
 
         elif choice == 3:
-            pass
+            print()
+            tasks = LoadPresetTasks(tasks, blockLength)
+            print()
 
         elif choice == 4:
-            pass
+            print()
+            tasks = AddTask(tasks)
+            print()
 
         elif choice == 5:
-            pass
+            print()
+            tasks = EditTask(tasks)
+            print()
 
         elif choice == 6:
-            pass
+            print()
+            tasks = ReorderTasks(tasks)
+            print()
 
         elif choice == 7:
-            carryOn = False
+            print()
+            tasks = DeleteTask(tasks)
+            print()
 
-        ConvertListFile("./Data/ActiveList/activeList.txt", tasks)
+        elif choice == 8:
+            carryOn = False
 
     ConvertListFile("./Data/PreloadList/preloadList.txt", tasks)
 
-    print()
-    PrintBlock(blockLength)
-    print()
+    return tasks
 
 if __name__ == "__main__":
     InputTasks(30) # This is just for testing purposes

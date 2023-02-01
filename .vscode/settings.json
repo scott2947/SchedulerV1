@@ -16,6 +16,15 @@
         "./Specific/WelcomeMessage",
         "./Specific/RootMenu",
         "./Specific/ReorderPresetLists",
-        "./Specific/DeletePresetList"
+        "./Specific/DeletePresetList",
+        "./Specific/LoadPresetTasks",
+        "./Specific/LoadPresetList",
+        "./Specific/PreloadTasks",
+        "./Specific/InputTasks",
+        "./Specific/InputStartTime",
+        "./Specific/InputProhibitedWindows",
+        "./Specific/UseScheduler",
+        "./Specific/CalculateSchedule",
+        "./Specific/TaskOutput"
     ]
 }
