@@ -23,6 +23,9 @@ def TaskOutput(schedule, completedTasks, startTime, blockLength):
 
     duration = 0
     for task in range(0, len(schedule)):
+        if schedule[task] == None:
+            continue
+        
         if task < len(schedule) - 1 and schedule[task] == schedule[task + 1]:
             duration += 1
             continue

@@ -17,7 +17,7 @@ def CalculateSchedule(tasks, startTime, prohibitedWindows):
     prohibitedDict = {}
 
     for window in prohibitedWindows.keys():
-        prohibitedDict[window] = [int(prohibitedWindows[window][0].total_seconds() // 60), int(prohibitedWindows[window][1].total_seconds() // 60)]
+        prohibitedDict[window] = [int(prohibitedWindows[window][0].total_seconds() // 60), int(prohibitedWindows[window][1].total_seconds() // 60) + 1]
 
     total = 0
     for task in taskDict.values():
@@ -25,6 +25,14 @@ def CalculateSchedule(tasks, startTime, prohibitedWindows):
 
     for window in prohibitedDict.values():
         total += window[1] - window[0]
+
+    maximumProhibitedWindow = 0
+    for window in prohibitedDict.values():
+        if window[1] > maximumProhibitedWindow:
+            maximumProhibitedWindow = window[1]
+
+    if maximumProhibitedWindow > total:
+        total = maximumProhibitedWindow
 
     schedule = [None] * total
 

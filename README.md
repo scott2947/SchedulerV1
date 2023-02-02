@@ -17,6 +17,11 @@ A simple, text-based time management application written in Python.
 <li>Testing block at bottom of code</li>
 </ul>
 
+<h3>Bugs</h3>
+<ul>
+<li>Prohibited windows after range -> FIXED</li>
+</ul>
+
 <h3>Desirable features</h3>
 <ul>
 </ul>
