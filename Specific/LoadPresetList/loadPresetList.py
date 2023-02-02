@@ -13,12 +13,10 @@ def LoadPresetList():
 
     choice = int(input(colorama.Fore.CYAN + "Your choice => "))
 
-    ""+colorama.Style.RESET_ALL
-
     fileName = "./Data/PresetLists/Lists/" + taskLists[choice - 1] + ".txt"
 
-    ""+colorama.Style.RESET_ALL
-
     tasks = ConvertFileList(fileName)
+
+    ""+colorama.Style.RESET_ALL
 
     return tasks

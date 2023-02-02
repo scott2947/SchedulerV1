@@ -4,4 +4,4 @@ def ConvertListFile(filePath, taskList):
             fileObj.write(line + "\n")
 
 if __name__ == '__main__':
-    ConvertListFile()
+    ConvertListFile() # Tested from main code

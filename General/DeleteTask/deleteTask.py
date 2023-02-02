@@ -13,4 +13,4 @@ def DeleteTask(taskList):
     return taskList
 
 if __name__ == '__main__':
-    DeleteTask()
+    DeleteTask() # Tested from main code

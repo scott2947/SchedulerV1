@@ -31,11 +31,11 @@ def LoadPresetTasks(currentTasks, blockLength):
 
     choice = input(colorama.Fore.CYAN + "Your choice => ")
 
-    ""+colorama.Style.RESET_ALL
-
     choice = choice.split(",")
 
     taskList = [tasks[i - 1] for i in range(len(choice))]
+
+    ""+colorama.Style.RESET_ALL
 
     return currentTasks + taskList
 

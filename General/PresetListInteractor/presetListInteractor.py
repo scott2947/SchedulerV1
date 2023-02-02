@@ -28,8 +28,8 @@ def PresetListInteractor(filePath, blockLength):
         print()
 
         tasks = ConvertFileList(filePath)
-        for line in tasks:
-            print(colorama.Fore.WHITE + line)
+        for task in tasks:
+            print(colorama.Fore.WHITE + task)
         
         print("\n" + colorama.Fore.WHITE + "Please select an option\n")
 

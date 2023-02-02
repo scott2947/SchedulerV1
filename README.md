@@ -1,20 +1,24 @@
 # Scheduler
 A simple, text-based time management application written in Python.
+
 <h3>Project limitations</h3>
 <ul>
-<li>Tasks must be internal to a day, due to time as opposed to date and time being used to track tasks</li>
-<li>Task names must be unique (they are identifiers)</li>
+<li>Task names must be unique</li>
+<li>Tasks must not overflow into the next day</li>
+<li>All prohibited windows and tasks must be forward in time of the start time</li>
 </ul>
-<h3>Ruleset:</h3>
+
+<h3>File tidying</h3>
 <ul>
-<li>Always block at the end of major functions</li>
-<li>Always reset highlighting at the end of functions, or before called functions</li>
-<li>When making a choice, avoid extra space between the options and the entry</li>
+<li>Code whitespace</li>
+<li>Variable names</li>
+<li>Colorama highlighting reset before called functions or end of function</li>
+<li>Output whitespace (major functions can have imposed whitespace, but not minor functions)</li>
+<li>Testing block at bottom of code</li>
 </ul>
-<h3>Reminders</h3>
+
+<h3>Desirable features</h3>
 <ul>
-<li>Insert all function calls in container functions</li>
-<li>Write all functions dependent on not yet present infrastructure</li>
-<li>Tidy up final product</li>
 </ul>
+
 <h5>Total number of lines given by <code>git ls-files | xargs wc -l</code></h5>

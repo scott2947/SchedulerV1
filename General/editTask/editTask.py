@@ -10,11 +10,12 @@ def EditTask(taskList):
     
     task = input(colorama.Fore.CYAN + "Please enter the edited task => ")
     duration = input(colorama.Fore.CYAN + "Please enter the duration of the edited task (in minutes) => ")
-    ""+colorama.Style.RESET_ALL
 
     taskList[choice - 1] = task + " ({0})".format(duration)
+
+    ""+colorama.Style.RESET_ALL
 
     return taskList
 
 if __name__ == '__main__':
-    EditTask()
+    EditTask() # Tested from main code

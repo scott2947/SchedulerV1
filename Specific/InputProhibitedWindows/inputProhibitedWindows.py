@@ -44,6 +44,8 @@ def InputProhibitedWindows(blockLength):
         elif choice == 2:
             carryOn = False
 
+        ""+colorama.Style.RESET_ALL
+
     return prohibitedWindows
 
 if __name__ == '__main__':
