@@ -39,6 +39,10 @@ def CalculateSchedule(tasks, startTime, prohibitedWindows):
     offset = int(startTime.total_seconds() // 60)
 
     for window in prohibitedDict.keys():
+        if prohibitedDict[window][1] - offset < 0:
+            continue
+        if prohibitedDict[window][0] - offset < 0:
+            prohibitedDict[window][0] = offset
         for i in range(prohibitedDict[window][0] - offset, prohibitedDict[window][1] - offset):
             schedule[i] = window
     

@@ -18,12 +18,18 @@ A simple, text-based time management application written in Python.
 </ul>
 
 <h3>Bugs</h3>
-<ul>
+<ol>
 <li>Prohibited windows after range -> FIXED</li>
+<li>Prohibited windows are not being ordered correctly in the schedule -> FIXED</li>
+</ol>
+
+<h3>Potential bugs</h3>
+<ul>
 </ul>
 
 <h3>Desirable features</h3>
 <ul>
+<li>Allow prohibited windows to be saved (in the same way as tasks)</li>
 </ul>
 
 <h5>Total number of lines given by <code>git ls-files | xargs wc -l</code></h5>
